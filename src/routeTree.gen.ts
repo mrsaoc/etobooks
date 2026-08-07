@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TextosIndexRouteImport } from './routes/textos.index'
+import { Route as TextosSlugRouteImport } from './routes/textos.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TextosIndexRoute = TextosIndexRouteImport.update({
+  id: '/textos/',
+  path: '/textos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextosSlugRoute = TextosSlugRouteImport.update({
+  id: '/textos/$slug',
+  path: '/textos/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/textos/$slug': typeof TextosSlugRoute
+  '/textos/': typeof TextosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/textos/$slug': typeof TextosSlugRoute
+  '/textos': typeof TextosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/textos/$slug': typeof TextosSlugRoute
+  '/textos/': typeof TextosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/textos/$slug' | '/textos/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/textos/$slug' | '/textos'
+  id: '__root__' | '/' | '/textos/$slug' | '/textos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  TextosSlugRoute: typeof TextosSlugRoute
+  TextosIndexRoute: typeof TextosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +68,28 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/textos/': {
+      id: '/textos/'
+      path: '/textos'
+      fullPath: '/textos/'
+      preLoaderRoute: typeof TextosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/textos/$slug': {
+      id: '/textos/$slug'
+      path: '/textos/$slug'
+      fullPath: '/textos/$slug'
+      preLoaderRoute: typeof TextosSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  TextosSlugRoute: TextosSlugRoute,
+  TextosIndexRoute: TextosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
