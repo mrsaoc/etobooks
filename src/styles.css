@@ -143,4 +143,12 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+
+  /* Esconde o badge "Edit with Lovable" */
+  [data-lovable-badge],
+  .lovable-badge,
+  a[href*="lovable"] {
+    display: none !important;
+    visibility: hidden !important;
+  }
 }
