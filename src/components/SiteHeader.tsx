@@ -15,11 +15,14 @@ export function SiteHeader() {
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 py-3 sm:gap-4 sm:px-6 sm:py-4 md:px-10">
         <Link to="/" className="flex min-w-0 items-center gap-3">
           <img
-            src={logo.url}
+            src={logo?.url ?? "/favicon.png"}
             alt="ETO Books"
-            width={64}
-            height={64}
-            className="h-12 w-12 shrink-0 object-contain sm:h-14 sm:w-14"
+            className="h-24 w-24 shrink-0 flex-none object-contain sm:h-32 sm:w-32"
+            style={{ maxWidth: 'none', maxHeight: 'none', display: 'block' }}
+            onError={(e) => {
+              const img = e.currentTarget as HTMLImageElement;
+              if (img.src !== "/favicon.png") img.src = "/favicon.png";
+            }}
           />
           <span className="truncate font-serif text-sm tracking-[0.2em] text-neutral-900 uppercase sm:text-base sm:tracking-[0.22em]">
             Eto Books
@@ -28,8 +31,7 @@ export function SiteHeader() {
 
         <nav className="-mr-1 flex shrink-0 items-center gap-1 sm:gap-4 md:gap-6">
           {tabs.map((tab) => {
-            const active =
-              tab.to === "/" ? pathname === "/" : pathname.startsWith(tab.to);
+            const active = tab.to === "/" ? pathname === "/" : pathname.startsWith(tab.to);
             return (
               <Link
                 key={tab.to}
