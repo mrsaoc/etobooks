@@ -12,21 +12,21 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/85 backdrop-blur-md">
-      <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 py-4 md:px-10">
+      <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 py-3 sm:gap-4 sm:px-6 sm:py-4 md:px-10">
         <Link to="/" className="flex min-w-0 items-center gap-3">
           <img
             src={logo.url}
             alt="ETO Books"
-            width={40}
-            height={40}
-            className="h-9 w-9 shrink-0 object-contain"
+            width={64}
+            height={64}
+            className="h-12 w-12 shrink-0 object-contain sm:h-14 sm:w-14"
           />
-          <span className="truncate font-serif text-base tracking-[0.22em] text-neutral-900 uppercase">
+          <span className="truncate font-serif text-sm tracking-[0.2em] text-neutral-900 uppercase sm:text-base sm:tracking-[0.22em]">
             Eto Books
           </span>
         </Link>
 
-        <nav className="flex shrink-0 items-center gap-6 sm:gap-9">
+        <nav className="-mr-1 flex shrink-0 items-center gap-1 sm:gap-4 md:gap-6">
           {tabs.map((tab) => {
             const active =
               tab.to === "/" ? pathname === "/" : pathname.startsWith(tab.to);
@@ -34,19 +34,22 @@ export function SiteHeader() {
               <Link
                 key={tab.to}
                 to={tab.to}
-                className="group relative py-1 text-[0.7rem] tracking-[0.18em] text-neutral-500 uppercase transition-colors duration-300 hover:text-neutral-900 data-[active=true]:text-neutral-900"
+                className="group relative flex min-h-11 items-center px-2 text-[0.66rem] tracking-[0.16em] text-neutral-500 uppercase transition-colors duration-300 hover:text-neutral-900 sm:px-1 sm:text-[0.7rem] sm:tracking-[0.18em] data-[active=true]:text-neutral-900"
                 data-active={active}
               >
                 {tab.label}
                 <span
-                  className={`absolute -bottom-0.5 left-0 h-px bg-neutral-900 transition-all duration-500 ease-out ${
-                    active ? "w-full" : "w-0 group-hover:w-full"
+                  className={`absolute bottom-2 left-2 h-px bg-neutral-900 transition-all duration-500 ease-out sm:left-1 ${
+                    active
+                      ? "w-[calc(100%-1rem)] sm:w-[calc(100%-0.5rem)]"
+                      : "w-0 group-hover:w-[calc(100%-1rem)] sm:group-hover:w-[calc(100%-0.5rem)]"
                   }`}
                 />
               </Link>
             );
           })}
         </nav>
+
       </div>
     </header>
   );
