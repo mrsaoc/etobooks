@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -11,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteHeader } from "../components/SiteHeader";
 
 function NotFoundComponent() {
   return (
@@ -77,21 +79,38 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "EtoBooks — Ewerthon Tobace" },
+      {
+        name: "description",
+        content:
+          "Obras e textos de Ewerthon Tobace: literatura contemporânea em edições minimalistas e um caderno editorial de ensaios.",
+      },
+      { name: "author", content: "Ewerthon Tobace" },
+      { property: "og:title", content: "EtoBooks — Ewerthon Tobace" },
+      {
+        property: "og:description",
+        content:
+          "Obras e textos de Ewerthon Tobace: literatura contemporânea em edições minimalistas.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Inter:wght@300..600&display=swap",
+      },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
     ],
   }),
   shellComponent: RootShell,
@@ -102,11 +121,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="bg-white font-sans text-neutral-900 antialiased">
         {children}
         <Scripts />
       </body>
@@ -116,11 +135,24 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="flex min-h-screen flex-col bg-white">
+        <SiteHeader />
+        <main key={pathname} className="flex-1 animate-in fade-in duration-700">
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </main>
+        <footer className="border-t border-neutral-200">
+          <div className="mx-auto grid max-w-6xl gap-4 px-6 py-10 text-[0.62rem] tracking-[0.24em] text-neutral-400 uppercase sm:flex sm:items-center sm:justify-between md:px-10">
+            <p>© {new Date().getFullYear()} Ewerthon Tobace</p>
+            <p>EtoBooks · Projeto editorial</p>
+          </div>
+        </footer>
+      </div>
     </QueryClientProvider>
   );
 }
+

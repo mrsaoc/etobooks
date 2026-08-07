@@ -69,7 +69,7 @@ function PostPage() {
         </header>
 
         <div className="mt-12 space-y-8 font-sans text-base leading-relaxed text-neutral-600 md:text-[1.06rem] md:leading-[1.95]">
-          {post.paragraphs.map((paragraph, i) => (
+          {post.paragraphs.map((paragraph: string, i: number) => (
             <p
               key={i}
               className={
