@@ -72,20 +72,21 @@ function Index() {
           </p>
         </Reveal>
         <Reveal delay={320}>
-          <div className="mt-12 flex flex-wrap items-center gap-8">
+          <div className="mt-12 flex flex-col items-stretch gap-6 sm:flex-row sm:flex-wrap sm:items-center sm:gap-8">
             <a
               href="#obras"
-              className="inline-flex items-center border border-neutral-900 bg-neutral-900 px-8 py-4 text-[0.7rem] tracking-[0.22em] text-white uppercase transition-colors duration-500 ease-out hover:bg-white hover:text-neutral-900"
+              className="inline-flex min-h-13 items-center justify-center border border-neutral-900 bg-neutral-900 px-8 py-4 text-[0.7rem] tracking-[0.22em] text-white uppercase transition-colors duration-500 ease-out hover:bg-white hover:text-neutral-900 active:opacity-80"
             >
               Ver as obras
             </a>
             <a
               href="#sinopse"
-              className="border-b border-neutral-300 pb-1 text-[0.7rem] tracking-[0.22em] text-neutral-500 uppercase transition-colors duration-300 hover:border-neutral-900 hover:text-neutral-900"
+              className="inline-flex min-h-11 items-center justify-center border-b border-neutral-300 pb-1 text-[0.7rem] tracking-[0.22em] text-neutral-500 uppercase transition-colors duration-300 hover:border-neutral-900 hover:text-neutral-900 active:opacity-70 sm:justify-start"
             >
               Sobre o autor
             </a>
           </div>
+
         </Reveal>
       </section>
 
