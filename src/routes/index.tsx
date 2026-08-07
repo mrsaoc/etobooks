@@ -108,7 +108,7 @@ function Index() {
           </div>
         </Reveal>
 
-        <div className="mt-16 grid gap-x-10 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-x-10 gap-y-14 sm:mt-16 sm:gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
           {books.map((book, i) => (
             <Reveal key={book.title} delay={i * 120}>
               <article className="group">
@@ -147,7 +147,7 @@ function Index() {
         id="sinopse"
         className="scroll-mt-24 border-t border-neutral-200 bg-white"
       >
-        <div className="mx-auto grid max-w-6xl gap-16 px-6 py-20 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:px-10 md:py-32">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 sm:gap-16 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:px-10 md:py-32">
           <Reveal>
             <div>
               <h2 className="font-serif text-3xl leading-tight md:text-4xl">
