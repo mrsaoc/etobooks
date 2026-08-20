@@ -48,32 +48,6 @@ export const posts: Post[] = [
       "Reler é, no fim, a forma mais honesta de autobiografia. Não conto minha vida: mostro onde marquei as margens.",
     ],
   },
-  {
-    slug: "a-primeira-frase",
-    title: "A primeira frase",
-    date: "2026-03-19",
-    displayDate: "19 de março, 2026",
-    excerpt:
-      "Toda abertura é uma promessa. Notas sobre começos, sobre o medo da página branca e sobre por que reescrevo sempre o início no fim.",
-    paragraphs: [
-      "Toda abertura é uma promessa, e é por isso que a primeira frase custa tanto. Ela precisa dizer pouco e sugerir muito, como uma porta entreaberta.",
-      "Escrevo o começo por último. Só depois de conhecer o livro inteiro sei de onde ele deveria ter partido.",
-      "O medo da página branca não é medo de não ter o que dizer. É medo de descobrir, na primeira linha, exatamente o que se quis dizer o tempo todo.",
-    ],
-  },
-  {
-    slug: "gatos-e-manuscritos",
-    title: "Gatos e manuscritos",
-    date: "2026-01-27",
-    displayDate: "27 de janeiro, 2026",
-    excerpt:
-      "Um pequeno elogio à companhia silenciosa que dorme sobre as provas de página e não tem opinião alguma sobre o terceiro capítulo.",
-    paragraphs: [
-      "Há uma vantagem óbvia em escrever ao lado de um gato: ele não tem opinião sobre o terceiro capítulo.",
-      "Dorme sobre as provas de página com a serenidade de quem sabe que a literatura sobreviverá a qualquer revisão. É um bom conselho, dado sem palavras.",
-      "Aprendi com essa companhia a economia do gesto: mover-se apenas quando necessário, e então com precisão absoluta.",
-    ],
-  },
 ];
 
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);

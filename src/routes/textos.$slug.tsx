@@ -12,7 +12,7 @@ export const Route = createFileRoute("/textos/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Texto não encontrado — Ewerthon Tobace" },
+          { title: "Texto não encontrado — Casa Eto" },
           { name: "robots", content: "noindex" },
         ],
       };
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/textos/$slug")({
     const { post } = loaderData;
     return {
       meta: [
-        { title: `${post.title} — Ewerthon Tobace` },
+        { title: `${post.title} — Casa Eto` },
         { name: "description", content: post.excerpt },
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.excerpt },
@@ -38,7 +38,7 @@ function PostNotFound() {
       <h1 className="font-serif text-3xl">Texto não encontrado</h1>
       <Link
         to="/textos"
-        className="mt-8 inline-block border-b border-neutral-300 pb-1 text-[0.68rem] tracking-[0.24em] text-neutral-500 uppercase transition-colors hover:border-neutral-900 hover:text-neutral-900"
+        className="mt-8 inline-block border-b border-black/20 pb-1 text-[0.68rem] tracking-[0.24em] text-neutral-500 uppercase transition-colors hover:border-black hover:text-black"
       >
         Voltar aos textos
       </Link>
@@ -50,16 +50,16 @@ function PostPage() {
   const { post } = Route.useLoaderData();
 
   return (
-    <article className="bg-white text-neutral-900">
+    <article className="bg-white text-black">
       <div className="mx-auto max-w-2xl px-6 pt-20 pb-24 md:pt-32 md:pb-36">
         <Link
           to="/textos"
-          className="text-[0.62rem] tracking-[0.26em] text-neutral-400 uppercase transition-colors duration-300 hover:text-neutral-900"
+          className="text-[0.62rem] tracking-[0.26em] text-neutral-400 uppercase transition-colors duration-300 hover:text-black"
         >
           ← Textos
         </Link>
 
-        <header className="mt-12 border-b border-neutral-200 pb-10">
+        <header className="mt-12 border-b border-black/10 pb-10">
           <p className="text-[0.62rem] tracking-[0.26em] text-neutral-400 uppercase">
             {post.displayDate}
           </p>
@@ -74,7 +74,7 @@ function PostPage() {
               key={i}
               className={
                 i === 0
-                  ? "font-serif text-xl leading-relaxed text-neutral-900 md:text-2xl md:leading-relaxed"
+                  ? "font-serif text-xl leading-relaxed text-black md:text-2xl md:leading-relaxed"
                   : undefined
               }
             >
@@ -83,9 +83,9 @@ function PostPage() {
           ))}
         </div>
 
-        <footer className="mt-16 border-t border-neutral-200 pt-10">
+        <footer className="mt-16 border-t border-black/10 pt-10">
           <p className="text-[0.62rem] tracking-[0.26em] text-neutral-400 uppercase">
-            Ewerthon Tobace
+            Casa Eto
           </p>
         </footer>
       </div>
