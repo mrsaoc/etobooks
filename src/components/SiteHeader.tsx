@@ -10,12 +10,12 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-black/10 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 py-4 sm:gap-4 sm:px-6 md:px-10">
+      <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 py-5 sm:gap-4 sm:px-6 md:px-10">
         <Link to="/" className="flex min-w-0 items-center">
           <img
             src="/favicon.png"
             alt="Casa Eto"
-            className="h-10 w-auto sm:h-12"
+            className="h-16 w-auto sm:h-20 md:h-24"
           />
           <span className="sr-only">Casa Eto</span>
         </Link>
