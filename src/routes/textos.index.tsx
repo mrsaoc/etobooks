@@ -6,17 +6,17 @@ import { posts } from "@/lib/posts";
 export const Route = createFileRoute("/textos/")({
   head: () => ({
     meta: [
-      { title: "Textos — Ewerthon Tobace" },
+      { title: "Textos — Casa Eto" },
       {
         name: "description",
         content:
-          "Ensaios, notas e textos avulsos de Ewerthon Tobace sobre escrita, leitura e o ofício literário. Um espaço editorial de leitura sem distrações.",
+          "Ensaios, notas e manifestos de Casa Eto sobre literatura, edição e o ofício de fazer livros.",
       },
-      { property: "og:title", content: "Textos — Ewerthon Tobace" },
+      { property: "og:title", content: "Textos — Casa Eto" },
       {
         property: "og:description",
         content:
-          "Ensaios, notas e textos avulsos de Ewerthon Tobace sobre escrita, leitura e o ofício literário.",
+          "Ensaios, notas e manifestos sobre literatura, edição e o ofício de fazer livros.",
       },
     ],
   }),
@@ -25,11 +25,11 @@ export const Route = createFileRoute("/textos/")({
 
 function TextosIndex() {
   return (
-    <div className="bg-white text-neutral-900">
+    <div className="bg-white text-black">
       <section className="mx-auto max-w-4xl px-6 pt-24 pb-14 md:px-10 md:pt-36 md:pb-20">
         <Reveal>
-          <p className="text-[0.68rem] tracking-[0.34em] text-neutral-400 uppercase">
-            Caderno · Ewerthon Tobace
+          <p className="text-[0.65rem] tracking-[0.34em] text-neutral-400 uppercase">
+            Caderno
           </p>
         </Reveal>
         <Reveal delay={120}>
@@ -39,33 +39,28 @@ function TextosIndex() {
         </Reveal>
         <Reveal delay={200}>
           <p className="mt-8 max-w-xl font-sans text-base leading-relaxed text-neutral-500">
-            Ensaios curtos, notas de leitura e anotações de rua. Publicados sem
-            calendário fixo, do jeito que foram escritos.
+            Notas de leitura, ensaios curtos e manifestos sobre o ofício de fazer livros.
           </p>
         </Reveal>
       </section>
 
       <section className="mx-auto max-w-4xl px-6 pb-24 md:px-10 md:pb-36">
-        <div className="border-t border-neutral-200">
+        <div className="border-t border-black/10">
           {posts.map((post, i) => (
             <Reveal key={post.slug} delay={Math.min(i, 4) * 90}>
               <Link
                 to="/textos/$slug"
                 params={{ slug: post.slug }}
-                className="group block border-b border-neutral-200 py-10 md:py-12"
+                className="group block border-b border-black/10 py-10 md:py-12"
               >
-                <p className="text-[0.62rem] tracking-[0.26em] text-neutral-400 uppercase">
-                  {post.displayDate}
-                </p>
-                <h2 className="mt-4 max-w-2xl font-serif text-2xl leading-snug text-neutral-900 transition-opacity duration-500 group-hover:opacity-60 md:text-3xl">
-                  {post.title}
-                </h2>
-                <p className="mt-4 max-w-2xl font-sans text-sm leading-relaxed text-neutral-500 md:text-base">
-                  {post.excerpt}
-                </p>
-                <span className="mt-6 inline-block text-[0.62rem] tracking-[0.26em] text-neutral-400 uppercase transition-colors duration-300 group-hover:text-neutral-900">
-                  Ler o texto
-                </span>
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-baseline sm:justify-between">
+                  <p className="text-[0.62rem] tracking-[0.26em] text-neutral-400 uppercase">
+                    {post.displayDate}
+                  </p>
+                  <h2 className="max-w-2xl font-serif text-2xl leading-snug text-black transition-opacity duration-500 group-hover:opacity-60 md:text-3xl">
+                    {post.title}
+                  </h2>
+                </div>
               </Link>
             </Reveal>
           ))}
