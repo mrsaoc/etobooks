@@ -11,12 +11,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/10 bg-white/90 backdrop-blur-md">
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 py-5 sm:gap-4 sm:px-6 md:px-10">
-        <Link to="/" className="flex min-w-0 items-center">
+        <Link to="/" className="flex min-w-0 items-center gap-3 sm:gap-4">
           <img
             src="/favicon.png"
             alt="EtoBooks"
             className="h-16 w-auto sm:h-20 md:h-24"
           />
+          <span className="shrink-0 font-sans text-[0.72rem] tracking-[0.26em] text-black uppercase sm:text-[0.82rem] sm:tracking-[0.28em] md:text-[0.92rem]">
+            ETO BOOKS
+          </span>
           <span className="sr-only">EtoBooks</span>
         </Link>
 
@@ -46,3 +49,4 @@ export function SiteHeader() {
     </header>
   );
 }
+
