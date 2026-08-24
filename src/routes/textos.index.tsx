@@ -6,13 +6,13 @@ import { posts } from "@/lib/posts";
 export const Route = createFileRoute("/textos/")({
   head: () => ({
     meta: [
-      { title: "Textos — Casa Eto" },
+      { title: "Textos — EtoBooks" },
       {
         name: "description",
         content:
-          "Ensaios, notas e manifestos de Casa Eto sobre literatura, edição e o ofício de fazer livros.",
+          "Ensaios, notas e manifestos de EtoBooks sobre literatura, edição e o ofício de fazer livros.",
       },
-      { property: "og:title", content: "Textos — Casa Eto" },
+      { property: "og:title", content: "Textos — EtoBooks" },
       {
         property: "og:description",
         content:

@@ -79,19 +79,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CASA ETO — Literatura & Estúdio Criativo" },
+      { title: "ETOBOOKS — Editora, Estúdio Criativo e Assessoria" },
       {
         name: "description",
         content:
-          "Casa Eto é um estúdio criativo e editora de vanguarda. Transformamos ideias, histórias e manuscritos em obras literárias de alto valor cultural.",
+          "EtoBooks é uma plataforma literária que atua como guarda-chuva corporativo para editoração, estúdio criativo, ghostwriting e assessoria.",
       },
-      { name: "author", content: "Casa Eto" },
+      { name: "author", content: "EtoBooks" },
       { name: "theme-color", content: "#ffffff" },
-      { property: "og:title", content: "CASA ETO — Literatura & Estúdio Criativo" },
+      { property: "og:title", content: "ETOBOOKS — Editora, Estúdio Criativo e Assessoria" },
       {
         property: "og:description",
         content:
-          "Estúdio criativo e editora de vanguarda. Ideias, histórias e manuscritos transformados em obras literárias.",
+          "Uma plataforma literária que atua como guarda-chuva corporativo para editoração, estúdio criativo, ghostwriting e assessoria.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -150,8 +150,8 @@ function RootComponent() {
         </main>
         <footer className="border-t border-black/10">
           <div className="mx-auto grid max-w-6xl gap-4 px-6 py-10 text-[0.62rem] tracking-[0.24em] text-neutral-400 uppercase sm:flex sm:items-center sm:justify-between md:px-10">
-            <p>© {new Date().getFullYear()} Casa Eto</p>
-            <p>Literatura & Estúdio Criativo</p>
+            <p>© {new Date().getFullYear()} EtoBooks</p>
+            <p>Editora, Estúdio Criativo e Assessoria</p>
           </div>
         </footer>
       </div>
