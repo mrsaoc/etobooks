@@ -59,8 +59,8 @@ function Index() {
           </p>
         </Reveal>
         <Reveal delay={120}>
-          <h1 className="mt-8 font-serif text-[clamp(3.5rem,12.5vw,9.5rem)] leading-[0.9] tracking-tight">
-            EtoBooks
+          <h1 className="mt-8 font-serif text-[clamp(3.5rem,12.5vw,9.5rem)] leading-[0.9] tracking-tight uppercase">
+            ETOBOOKS
           </h1>
         </Reveal>
         <Reveal delay={220}>
