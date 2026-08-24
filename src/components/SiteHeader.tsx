@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 
 const tabs = [
-  { to: "/", label: "Estúdio" },
+  { to: "/", label: "EtoBooks" },
   { to: "/textos", label: "Textos" },
 ] as const;
 
@@ -14,10 +14,10 @@ export function SiteHeader() {
         <Link to="/" className="flex min-w-0 items-center">
           <img
             src="/favicon.png"
-            alt="Casa Eto"
+            alt="EtoBooks"
             className="h-16 w-auto sm:h-20 md:h-24"
           />
-          <span className="sr-only">Casa Eto</span>
+          <span className="sr-only">EtoBooks</span>
         </Link>
 
         <nav className="-mr-1 flex shrink-0 items-center gap-1 sm:gap-4 md:gap-6">
