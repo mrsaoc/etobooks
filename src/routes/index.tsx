@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/Reveal";
-import catAsset from "@/assets/eto-cat.svg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -53,8 +52,8 @@ function Index() {
   return (
     <div className="bg-white text-black">
       {/* Hero */}
-      <section className="relative mx-auto min-h-[calc(100vh-7rem)] max-w-6xl px-6 pt-24 pb-20 md:px-10 md:pt-32 md:pb-32">
-        <div className="grid min-h-[calc(100vh-12rem)] items-center gap-10 lg:grid-cols-2 lg:gap-6">
+      <section className="relative mx-auto min-h-[calc(100vh-10rem)] max-w-6xl px-6 pt-6 pb-10 md:px-10 md:pt-8 md:pb-16">
+        <div className="grid min-h-[calc(100vh-14rem)] items-center gap-10 lg:-translate-x-8 lg:grid-cols-2 lg:gap-6">
           {/* Text */}
           <div className="relative z-10 flex flex-col justify-center">
             <Reveal>
@@ -77,11 +76,11 @@ function Index() {
           </div>
 
           {/* Cat banner */}
-          <div className="relative flex h-full min-h-[18rem] items-center justify-center overflow-hidden lg:justify-end">
+          <div className="relative flex h-full min-h-[18rem] items-center justify-center overflow-visible lg:justify-end">
             <img
-              src={catAsset.url}
+              src="/cat.svg"
               alt=""
-              className="h-full max-h-[50vh] w-full max-w-[50vh] object-contain object-center opacity-90 grayscale lg:max-h-[65vh] lg:max-w-[65vh] lg:object-right"
+              className="h-full max-h-[50vh] w-full max-w-[50vh] object-contain object-center opacity-90 grayscale lg:max-h-[75vh] lg:max-w-[75vh] lg:translate-x-[40%] lg:object-right"
               aria-hidden="true"
             />
           </div>
