@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/Reveal";
+import catAsset from "@/assets/eto-cat.svg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,24 +53,39 @@ function Index() {
   return (
     <div className="bg-white text-black">
       {/* Hero */}
-      <section className="mx-auto flex min-h-[calc(100vh-7rem)] max-w-6xl flex-col justify-center px-6 pt-24 pb-20 md:px-10 md:pt-32 md:pb-32">
-        <Reveal>
-          <p className="text-[0.65rem] tracking-[0.34em] text-neutral-400 uppercase">
-            Editora, Estúdio Criativo e Assessoria
-          </p>
-        </Reveal>
-        <Reveal delay={120}>
-          <h1 className="mt-8 font-serif text-[clamp(3.5rem,12.5vw,9.5rem)] leading-[0.9] tracking-tight uppercase">
-            ETOBOOKS
-          </h1>
-        </Reveal>
-        <Reveal delay={220}>
-          <p className="mt-10 max-w-2xl font-sans text-base leading-relaxed text-neutral-500 sm:text-lg md:text-xl">
-            Uma plataforma literária que atua como guarda-chuva corporativo para
-            editoração, estúdio criativo, ghostwriting e assessoria. Tratamos o
-            livro como objeto cultural de alto valor.
-          </p>
-        </Reveal>
+      <section className="relative mx-auto min-h-[calc(100vh-7rem)] max-w-6xl px-6 pt-24 pb-20 md:px-10 md:pt-32 md:pb-32">
+        <div className="grid min-h-[calc(100vh-12rem)] items-center gap-10 lg:grid-cols-2 lg:gap-6">
+          {/* Text */}
+          <div className="relative z-10 flex flex-col justify-center">
+            <Reveal>
+              <p className="text-[0.65rem] tracking-[0.34em] text-neutral-400 uppercase">
+                Editora, Estúdio Criativo e Assessoria
+              </p>
+            </Reveal>
+            <Reveal delay={120}>
+              <h1 className="mt-8 font-serif text-[clamp(3.5rem,12.5vw,9.5rem)] leading-[0.9] tracking-tight uppercase">
+                ETOBOOKS
+              </h1>
+            </Reveal>
+            <Reveal delay={220}>
+              <p className="mt-10 max-w-2xl font-sans text-base leading-relaxed text-neutral-500 sm:text-lg md:text-xl">
+                Uma plataforma literária que atua como guarda-chuva corporativo para
+                editoração, estúdio criativo, ghostwriting e assessoria. Tratamos o
+                livro como objeto cultural de alto valor.
+              </p>
+            </Reveal>
+          </div>
+
+          {/* Cat banner */}
+          <div className="relative flex h-full min-h-[18rem] items-center justify-center overflow-hidden lg:justify-end">
+            <img
+              src={catAsset.url}
+              alt=""
+              className="h-full max-h-[50vh] w-full max-w-[50vh] object-contain object-center opacity-90 grayscale lg:max-h-[65vh] lg:max-w-[65vh] lg:object-right"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
       </section>
 
       {/* Casa Eto — Estúdio & Ghostwriting */}
@@ -142,3 +158,4 @@ function Index() {
     </div>
   );
 }
+
