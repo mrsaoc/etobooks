@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/Reveal";
+import { HeroCat } from "@/components/HeroCat";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -53,16 +54,16 @@ function Index() {
     <div className="bg-white text-black">
       {/* Hero */}
       <section className="relative mx-auto min-h-[calc(100vh-10rem)] max-w-6xl px-6 pt-6 pb-10 md:px-10 md:pt-8 md:pb-16">
-        <div className="grid min-h-[calc(100vh-14rem)] items-center gap-10 lg:-translate-x-8 lg:grid-cols-2 lg:gap-6">
+        <div className="grid min-h-[calc(100vh-14rem)] items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-6">
           {/* Text */}
-          <div className="relative z-10 flex flex-col justify-center">
+          <div className="relative z-10 flex min-w-0 flex-col justify-center">
             <Reveal>
               <p className="text-[0.65rem] tracking-[0.34em] text-neutral-400 uppercase">
                 Editora, Estúdio Criativo e Assessoria
               </p>
             </Reveal>
             <Reveal delay={120}>
-              <h1 className="mt-8 font-serif text-[clamp(3.5rem,12.5vw,9.5rem)] leading-[0.9] tracking-tight uppercase">
+              <h1 className="mt-8 font-serif text-[clamp(3.5rem,12.5vw,9.5rem)] leading-[0.9] tracking-tight uppercase lg:text-[clamp(4rem,7.8vw,6.9rem)]">
                 ETOBOOKS
               </h1>
             </Reveal>
@@ -75,14 +76,9 @@ function Index() {
             </Reveal>
           </div>
 
-          {/* Cat banner */}
-          <div className="relative flex h-full min-h-[18rem] items-center justify-center overflow-visible lg:justify-end">
-            <img
-              src="/cat.svg"
-              alt=""
-              className="h-full max-h-[50vh] w-full max-w-[50vh] object-contain object-center opacity-90 grayscale lg:max-h-[75vh] lg:max-w-[75vh] lg:translate-x-[40%] lg:object-right"
-              aria-hidden="true"
-            />
+          {/* The brand cat, grooming on a stack of books. */}
+          <div className="relative flex min-w-0 items-center justify-center">
+            <HeroCat />
           </div>
         </div>
       </section>
