@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as TextosIndexRouteImport } from './routes/textos.index'
 import { Route as TextosSlugRouteImport } from './routes/textos.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TextosIndexRoute = TextosIndexRouteImport.update({
@@ -31,30 +37,34 @@ const TextosSlugRoute = TextosSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
   '/textos/$slug': typeof TextosSlugRoute
   '/textos/': typeof TextosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
   '/textos/$slug': typeof TextosSlugRoute
   '/textos': typeof TextosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
   '/textos/$slug': typeof TextosSlugRoute
   '/textos/': typeof TextosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/textos/$slug' | '/textos/'
+  fullPaths: '/' | '/contato' | '/textos/$slug' | '/textos/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/textos/$slug' | '/textos'
-  id: '__root__' | '/' | '/textos/$slug' | '/textos/'
+  to: '/' | '/contato' | '/textos/$slug' | '/textos'
+  id: '__root__' | '/' | '/contato' | '/textos/$slug' | '/textos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContatoRoute: typeof ContatoRoute
   TextosSlugRoute: typeof TextosSlugRoute
   TextosIndexRoute: typeof TextosIndexRoute
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/textos/': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContatoRoute: ContatoRoute,
   TextosSlugRoute: TextosSlugRoute,
   TextosIndexRoute: TextosIndexRoute,
 }

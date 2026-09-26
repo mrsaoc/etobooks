@@ -36,7 +36,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -79,19 +79,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ETOBOOKS — Editora, Estúdio Criativo e Assessoria" },
+      { title: "ETO BOOKS — Editora, Estúdio Criativo e Assessoria" },
       {
         name: "description",
         content:
-          "EtoBooks é uma plataforma literária que atua como guarda-chuva corporativo para editoração, estúdio criativo, ghostwriting e assessoria.",
+          "Curadoria editorial, consultoria e acompanhamento individual. A ETO BOOKS cuida de cada etapa, da primeira ideia ao livro publicado.",
       },
-      { name: "author", content: "EtoBooks" },
+      { name: "author", content: "ETO BOOKS" },
       { name: "theme-color", content: "#ffffff" },
-      { property: "og:title", content: "ETOBOOKS — Editora, Estúdio Criativo e Assessoria" },
+      { property: "og:title", content: "ETO BOOKS — Editora, Estúdio Criativo e Assessoria" },
       {
         property: "og:description",
         content:
-          "Uma plataforma literária que atua como guarda-chuva corporativo para editoração, estúdio criativo, ghostwriting e assessoria.",
+          "Seu livro merece um caminho próprio. Curadoria editorial, ghostwriting, design, publicação, lançamento e assessoria.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -150,7 +150,7 @@ function RootComponent() {
         </main>
         <footer className="border-t border-black/10">
           <div className="mx-auto grid max-w-6xl gap-4 px-6 py-10 text-[0.62rem] tracking-[0.24em] text-neutral-400 uppercase sm:flex sm:items-center sm:justify-between md:px-10">
-            <p>© {new Date().getFullYear()} EtoBooks</p>
+            <p>© {new Date().getFullYear()} ETO BOOKS</p>
             <p>Editora, Estúdio Criativo e Assessoria</p>
           </div>
         </footer>

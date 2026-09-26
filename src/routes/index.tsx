@@ -1,156 +1,146 @@
-import { createFileRoute } from "@tanstack/react-router";
-
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { HeroCat } from "@/components/HeroCat";
 
+const description =
+  "Na ETO BOOKS, cada projeto começa com uma conversa. Curadoria editorial, consultoria e acompanhamento individual da primeira ideia ao livro publicado.";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ETOBOOKS — Editora, Estúdio Criativo e Assessoria" },
-      {
-        name: "description",
-        content:
-          "EtoBooks é uma plataforma literária que atua como guarda-chuva corporativo para editoração, estúdio criativo, ghostwriting e assessoria.",
-      },
-      { property: "og:title", content: "ETOBOOKS — Editora, Estúdio Criativo e Assessoria" },
-      {
-        property: "og:description",
-        content:
-          "Uma plataforma literária que atua como guarda-chuva corporativo para editoração, estúdio criativo, ghostwriting e assessoria.",
-      },
+      { title: "ETO BOOKS — Seu livro merece um caminho próprio" },
+      { name: "description", content: description },
+      { property: "og:title", content: "ETO BOOKS — Seu livro merece um caminho próprio" },
+      { property: "og:description", content: description },
     ],
   }),
   component: Index,
 });
 
-const services = [
-  {
-    title: "Você tem uma ideia",
-    text: "Ainda não existe livro. A gente ajuda a transformar a ideia em uma obra.",
-  },
-  {
-    title: "Você tem uma história",
-    text: "Existe uma experiência, trajetória, conhecimento ou memória. A gente entrevista, estrutura e escreve com você.",
-  },
-  {
-    title: "Você já tem um manuscrito",
-    text: "O livro existe. A gente transforma o original em uma publicação profissional.",
-  },
-];
-
-const beyond = [
-  {
-    title: "Eventos de Lançamento",
-    text: "Criamos o ritual de apresentar um livro ao mundo: concepção, convidados, ambientação e discurso.",
-  },
-  {
-    title: "Assessoria de Imprensa",
-    text: "Posicionamento, press kit, relacionamento com veículos e curadoria de imagem para a obra e seu autor.",
-  },
-];
-
 function Index() {
   return (
     <div className="bg-white text-black">
-      {/* Hero */}
-      <section className="relative mx-auto min-h-[calc(100vh-10rem)] max-w-6xl px-6 pt-6 pb-10 md:px-10 md:pt-8 md:pb-16">
-        <div className="grid min-h-[calc(100vh-14rem)] items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-6">
-          {/* Text */}
-          <div className="relative z-10 flex min-w-0 flex-col justify-center">
+      <section className="mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:gap-10">
+          <div className="min-w-0">
             <Reveal>
-              <p className="text-[0.65rem] tracking-[0.34em] text-neutral-400 uppercase">
+              <p className="text-[0.65rem] tracking-[0.3em] text-neutral-500 uppercase">
                 Editora, Estúdio Criativo e Assessoria
               </p>
-            </Reveal>
-            <Reveal delay={120}>
-              <h1 className="mt-8 font-serif text-[clamp(3.5rem,12.5vw,9.5rem)] leading-[0.9] tracking-tight uppercase lg:text-[clamp(4rem,7.8vw,6.9rem)]">
-                ETOBOOKS
+              <h1 className="mt-6 font-serif text-[clamp(2.7rem,5vw,4.3rem)] leading-[1.08] tracking-tight text-balance">
+                Seu livro merece um caminho próprio
               </h1>
             </Reveal>
-            <Reveal delay={220}>
-              <p className="mt-10 max-w-2xl font-sans text-base leading-relaxed text-neutral-500 sm:text-lg md:text-xl">
-                Uma plataforma literária que atua como guarda-chuva corporativo para
-                editoração, estúdio criativo, ghostwriting e assessoria. Tratamos o
-                livro como objeto cultural de alto valor.
-              </p>
+            <Reveal delay={160}>
+              <div className="mt-8 space-y-5 text-base leading-relaxed text-neutral-600 [&_strong]:font-semibold [&_strong]:text-neutral-800">
+                <p>
+                  Na <strong>ETO BOOKS</strong>, cada projeto começa com uma conversa. Escutamos a
+                  história, entendemos o que ela precisa e construímos, junto com você, o melhor
+                  caminho para transformá-la em livro.
+                </p>
+                <p>
+                  Oferecemos{" "}
+                  <strong>curadoria editorial, consultoria e acompanhamento individual</strong> da
+                  primeira ideia ao produto final, editado e publicado. E seguimos ao seu lado
+                  depois da publicação: criamos eventos, organizamos o lançamento e buscamos espaço
+                  na mídia para apresentar o livro a novos leitores.
+                </p>
+                <p>
+                  <strong>Cuidamos de cada etapa</strong> com atenção à sua voz e ao público que
+                  você deseja alcançar.
+                </p>
+              </div>
             </Reveal>
           </div>
-
-          {/* The brand cat, grooming on a stack of books. */}
-          <div className="relative flex min-w-0 items-center justify-center">
+          <div className="min-w-0">
             <HeroCat />
           </div>
         </div>
       </section>
-
-      {/* Casa Eto — Estúdio & Ghostwriting */}
       <section className="border-t border-black/10">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-32">
+        <div className="mx-auto max-w-6xl px-6 py-14 md:px-10 md:py-20">
           <Reveal>
-            <div className="mb-16 border-b border-black/10 pb-8 sm:mb-20">
-              <p className="text-[0.65rem] tracking-[0.34em] text-neutral-400 uppercase">
-                Casa Eto
+            <p className="text-[0.65rem] tracking-[0.3em] text-neutral-500 uppercase">CASA ETO</p>
+            <h2 className="mt-4 font-serif text-3xl leading-tight md:text-4xl">
+              Estúdio & Ghostwriting
+            </h2>
+            <div className="mt-7 max-w-4xl space-y-5 text-base leading-[1.8] text-neutral-600 md:text-lg [&_strong]:font-semibold [&_strong]:text-neutral-800">
+              <p>
+                Há histórias que ainda não encontraram as palavras certas. Outras já foram contadas
+                muitas vezes, mas precisam de estrutura, ritmo e profundidade para se tornar um
+                livro.
               </p>
-              <h2 className="mt-5 font-serif text-3xl leading-tight md:text-4xl">
-                Estúdio & Ghostwriting
-              </h2>
+              <p>
+                Na Casa ETO, <strong>trabalhamos lado a lado com cada autor</strong> para descobrir
+                o centro de sua narrativa. Desenvolvemos o conceito e a estrutura da obra e, no
+                ghostwriting, conduzimos entrevistas, pesquisamos e escrevemos a partir de suas
+                experiências, ideias e modo de ver o mundo.
+              </p>
+              <p>
+                Também damos forma visual ao livro:{" "}
+                <strong>
+                  cuidamos do design, da capa e das ilustrações, além de providenciar o registro do
+                  ISBN e buscar a gráfica adequada
+                </strong>{" "}
+                para a produção. Do texto ao objeto, cada escolha é pensada para que o autor se
+                reconheça no livro que tem em mãos.
+              </p>
             </div>
           </Reveal>
-
-          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-            {services.map((service, i) => (
-              <Reveal key={service.title} delay={i * 120}>
-                <article className="border-t border-black pt-8">
-                  <p className="text-[0.62rem] tracking-[0.26em] text-neutral-400 uppercase">
-                    0{i + 1}
-                  </p>
-                  <h3 className="mt-6 font-serif text-2xl leading-tight md:text-3xl">
-                    {service.title}
-                  </h3>
-                  <p className="mt-4 font-sans text-sm leading-relaxed text-neutral-500 md:text-base">
-                    {service.text}
-                  </p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
-
-      {/* Além do Livro */}
       <section className="border-t border-black/10">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-32">
+        <div className="mx-auto max-w-6xl px-6 py-14 md:px-10 md:py-20">
           <Reveal>
-            <div className="mb-16 border-b border-black/10 pb-8 sm:mb-20">
-              <p className="text-[0.65rem] tracking-[0.34em] text-neutral-400 uppercase">
-                Além do Livro
+            <p className="text-[0.65rem] tracking-[0.3em] text-neutral-500 uppercase">
+              ALÉM DO LIVRO
+            </p>
+            <h2 className="mt-4 font-serif text-3xl leading-tight md:text-4xl">
+              Lançamento e Assessoria
+            </h2>
+            <div className="mt-7 max-w-4xl space-y-5 text-base leading-[1.8] text-neutral-600 md:text-lg">
+              <p>
+                Publicar é um começo. Para que o livro encontre seus leitores, pensamos em como
+                apresentá-lo ao mundo.
               </p>
-              <h2 className="mt-5 font-serif text-3xl leading-tight md:text-4xl">
-                Lançamento e Assessoria
-              </h2>
+              <p>
+                Planejamos e produzimos o evento de lançamento, criamos oportunidades de encontro
+                entre autor e público e desenvolvemos ações de divulgação adequadas a cada obra.
+                Nossa assessoria também busca espaço na mídia, apresenta pautas a jornalistas e
+                acompanha entrevistas e outras oportunidades de exposição.
+              </p>
+              <p>
+                Cada lançamento tem sua própria história. Nosso trabalho é encontrar a melhor
+                maneira de contá-la.
+              </p>
             </div>
           </Reveal>
-
-          <div className="grid gap-12 sm:grid-cols-2 lg:gap-10">
-            {beyond.map((item, i) => (
-              <Reveal key={item.title} delay={i * 120}>
-                <article className="border-t border-black pt-8">
-                  <p className="text-[0.62rem] tracking-[0.26em] text-neutral-400 uppercase">
-                    0{i + 1}
-                  </p>
-                  <h3 className="mt-6 font-serif text-2xl leading-tight md:text-3xl">
-                    {item.title}
-                  </h3>
-                  <p className="mt-4 font-sans text-sm leading-relaxed text-neutral-500 md:text-base">
-                    {item.text}
-                  </p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+        </div>
+      </section>
+      <section className="border-t border-black/10 bg-neutral-50">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-24">
+          <Reveal>
+            <h2 className="max-w-3xl font-serif text-4xl leading-tight tracking-tight md:text-5xl">
+              Vamos falar sobre o seu livro?
+            </h2>
+            <p className="mt-6 font-serif text-xl text-neutral-800">
+              Sua história pode começar aqui.
+            </p>
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-neutral-600">
+              Tem um livro em mente ou quer conhecer melhor o nosso trabalho? Conte sua ideia para a
+              ETO BOOKS.
+            </p>
+            <Link
+              to="/contato"
+              className="mt-8 inline-flex min-h-12 items-center justify-center border border-black bg-black px-7 py-3 text-sm text-white transition-colors hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black"
+            >
+              Vamos conversar{" "}
+              <span aria-hidden="true" className="ml-6">
+                ↗
+              </span>
+            </Link>
+          </Reveal>
         </div>
       </section>
     </div>
   );
 }
-

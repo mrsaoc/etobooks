@@ -12,7 +12,7 @@ export const Route = createFileRoute("/textos/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Texto não encontrado — EtoBooks" },
+          { title: "Texto não encontrado — ETO BOOKS" },
           { name: "robots", content: "noindex" },
         ],
       };
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/textos/$slug")({
     const { post } = loaderData;
     return {
       meta: [
-        { title: `${post.title} — EtoBooks` },
+        { title: `${post.title} — ETO BOOKS` },
         { name: "description", content: post.excerpt },
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.excerpt },
@@ -84,9 +84,7 @@ function PostPage() {
         </div>
 
         <footer className="mt-16 border-t border-black/10 pt-10">
-          <p className="text-[0.62rem] tracking-[0.26em] text-neutral-400 uppercase">
-            EtoBooks
-          </p>
+          <p className="text-[0.62rem] tracking-[0.26em] text-neutral-400 uppercase">ETO BOOKS</p>
         </footer>
       </div>
     </article>
