@@ -29,7 +29,9 @@ export const editorialBanners = [
     id: "lancamentos",
     label: "Lançamento & divulgação",
     title: "Do livro ao encontro com o público",
-    placeholder: "Aguardando mídia",
+    image: "/images/livraria.jpg",
+    alt: "Interior de uma livraria com livros expostos em estantes e mesas",
+    imagePosition: "center",
     paragraphs: [
       "Um livro merece uma estreia à altura da história que conta. Por isso, pensamos o lançamento como uma experiência capaz de aproximar o autor de seus leitores e criar conversas que continuem depois do evento.",
       "Temos parcerias com livrarias de renome e acesso a espaços em museus e galerias que combinam com o universo dos livros e com o público de cada obra. Planejamos cada encontro de forma individual, do lugar escolhido à programação, para que o lançamento tenha a personalidade do autor e do livro.",

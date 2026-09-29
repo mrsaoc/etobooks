@@ -16,6 +16,19 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+function PhotoStrip({ src, alt, position }: { src: string; alt: string; position: string }) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      style={{ objectPosition: position }}
+      className="mt-9 aspect-[4/1] w-full max-w-4xl object-cover grayscale sm:aspect-[5/1]"
+    />
+  );
+}
+
 function Index() {
   return (
     <div className="bg-white text-black">
@@ -85,6 +98,11 @@ function Index() {
                 reconheça no livro que tem em mãos.
               </p>
             </div>
+            <PhotoStrip
+              src="/images/ghostwriting.jpg"
+              alt="Mãos escrevendo em um caderno aberto sobre uma mesa"
+              position="center 74%"
+            />
           </Reveal>
         </div>
       </section>
@@ -113,6 +131,11 @@ function Index() {
                 maneira de contá-la.
               </p>
             </div>
+            <PhotoStrip
+              src="/images/livraria.jpg"
+              alt="Livros em exposição nas estantes de uma livraria"
+              position="center 65%"
+            />
           </Reveal>
         </div>
       </section>
@@ -129,6 +152,11 @@ function Index() {
               Tem um livro em mente ou quer conhecer melhor o nosso trabalho? Conte sua ideia para a
               ETO BOOKS.
             </p>
+            <PhotoStrip
+              src="/images/livro-aberto.jpg"
+              alt="Livro aberto sobre uma mesa de leitura em uma biblioteca"
+              position="center 72%"
+            />
             <Link
               to="/contato"
               className="mt-8 inline-flex min-h-12 items-center justify-center border border-black bg-black px-7 py-3 text-sm text-white transition-colors hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black"

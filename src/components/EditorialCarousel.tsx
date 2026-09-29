@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, ImageIcon, Pause, Play } from "lucide-react";
+import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 import { editorialBanners } from "@/lib/editorial-banners";
 
 const INTERVAL_MS = 45_000;
@@ -139,21 +139,14 @@ export function EditorialCarousel() {
             className={`col-start-1 row-start-1 grid min-w-0 transition-opacity duration-700 motion-reduce:transition-none lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] ${active === index ? "visible opacity-100" : "invisible pointer-events-none opacity-0"}`}
           >
             <div className="relative aspect-[4/3] min-w-0 overflow-hidden bg-neutral-100 lg:aspect-auto lg:min-h-[38rem]">
-              {"placeholder" in banner ? (
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8 text-center text-neutral-500">
-                  <ImageIcon size={36} strokeWidth={1} aria-hidden="true" />
-                  <p className="text-xs tracking-[0.2em] uppercase">{banner.placeholder}</p>
-                </div>
-              ) : (
-                <img
-                  src={banner.image}
-                  alt={banner.alt}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  decoding="async"
-                  style={{ objectPosition: banner.imagePosition }}
-                  className="absolute inset-0 h-full w-full object-cover grayscale"
-                />
-              )}
+              <img
+                src={banner.image}
+                alt={banner.alt}
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
+                style={{ objectPosition: banner.imagePosition }}
+                className="absolute inset-0 h-full w-full object-cover grayscale"
+              />
             </div>
             <div className="flex flex-col justify-center p-6 sm:p-9 xl:p-12">
               <p className="text-[0.62rem] tracking-[0.25em] text-neutral-500 uppercase">
