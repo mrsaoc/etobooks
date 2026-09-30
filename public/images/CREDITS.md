@@ -11,9 +11,20 @@
   Arquivo: https://images.unsplash.com/photo-1758762601216-cdbdd9af1e1f
   Licença: https://unsplash.com/license (uso comercial permitido).
   Foto ilustrativa para Além do Livro e o banner de lançamentos; não retrata um evento ou parceiro da ETO BOOKS.
-- `livro-aberto.jpg`: livro aberto na biblioteca, Jairo Gonzalez / Unsplash.
-  Fonte: https://unsplash.com/photos/open-book-on-a-table-in-a-library-0VlVVNdE9uY
-  Arquivo: https://images.unsplash.com/photo-1757577143893-88b8d467e5ae
+- `livros-design.jpg`: livros sobre design e narrativa, Karl Solano / Unsplash.
+  Fonte: https://unsplash.com/photos/stack-of-books-on-table-h1QmEivSH2Y
+  Arquivo: https://images.unsplash.com/photo-1630852722046-d1c0606aefa5
   Licença: https://unsplash.com/license (uso comercial permitido).
+
+## Textos
+
+Imagens fornecidas pelo cliente para acompanhar os textos de Ewerthon Tobace, preservadas integralmente:
+- `textos/se-ela-danca.png`: original `Se ela dança....png`, arte ©ETo2021.
+- `textos/a-viagem.png`: original `A viagem.png`, arte ©ETo2021.
+- `textos/drinks-beijos-e-cia.png`: original `amor, beijos & cia.png`, arte ©ETo2021.
+- `textos/um-rosto-no-computador.jpeg`: original `Um rosto no computador.jpg.jpeg`, Foto: Divulgação.
+- `textos/depois-daquela-viagem.jpeg`: original `DepoisDaquelaViagem.jpg.jpeg`.
+
+O texto “Para sempre” foi fornecido sem imagem anexada. Os créditos e os avisos de direitos enviados pelo cliente constam nas páginas dos minicontos.
 
 As faixas da Home usam recortes via CSS; as fotos podem ser substituídas pelas imagens definitivas do cliente.

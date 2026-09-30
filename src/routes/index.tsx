@@ -153,9 +153,9 @@ function Index() {
               ETO BOOKS.
             </p>
             <PhotoStrip
-              src="/images/livro-aberto.jpg"
-              alt="Livro aberto sobre uma mesa de leitura em uma biblioteca"
-              position="center 72%"
+              src="/images/livros-design.jpg"
+              alt="Pilha de livros sobre design e narrativa em uma mesa"
+              position="center 50%"
             />
             <Link
               to="/contato"

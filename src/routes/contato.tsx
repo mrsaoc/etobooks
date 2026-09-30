@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
+import { ContactLocations } from "@/components/ContactLocations";
+import { SocialIcon, type SocialName } from "@/components/SocialIcon";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
@@ -20,7 +22,8 @@ export const Route = createFileRoute("/contato")({
   component: Contato,
 });
 
-const socialLinks = [
+const socialLinks: { name: SocialName; label: string; href: string }[] = [
+  { name: "WhatsApp", label: "+81 80 5672-1401", href: "https://wa.me/818056721401" },
   { name: "Instagram", label: "@etobooks", href: "https://www.instagram.com/etobooks/" },
   {
     name: "Facebook",
@@ -28,6 +31,7 @@ const socialLinks = [
     href: "https://www.facebook.com/profile.php?id=61582685284286",
   },
   { name: "YouTube", label: "@eto_world", href: "https://www.youtube.com/@eto_world" },
+  { name: "TikTok", label: "@eto.world", href: "https://www.tiktok.com/@eto.world" },
 ];
 
 function Contato() {
@@ -64,6 +68,18 @@ function Contato() {
           >
             Enviar mensagem <span aria-hidden="true">↗</span>
           </a>
+          <figure className="mt-10">
+            <img
+              src="/images/ewerthon-tobace.jpeg"
+              alt="Ewerthon Tobace, jornalista, escritor e ghostwriter"
+              loading="lazy"
+              decoding="async"
+              className="aspect-[4/3] w-full object-cover object-[42%_center] grayscale"
+            />
+            <figcaption className="mt-3 text-xs tracking-wide text-neutral-500">
+              Ewerthon Tobace · ETO BOOKS
+            </figcaption>
+          </figure>
         </Reveal>
         <Reveal delay={200}>
           <div className="space-y-9 lg:border-l lg:border-black/10 lg:pl-10">
@@ -76,14 +92,10 @@ function Contato() {
                 info@etobooks.com
               </a>
             </div>
-            <ul className="space-y-3 border-y border-black/10 py-7 text-sm text-neutral-600">
-              <li>Tóquio, Japão</li>
-              <li>São Paulo, Brasil</li>
-              <li>Nova Iorque, EUA</li>
-            </ul>
+            <ContactLocations />
             <div>
               <p className="text-[0.65rem] tracking-[0.26em] text-neutral-500 uppercase">
-                Redes sociais
+                Redes sociais & WhatsApp
               </p>
               <ul className="mt-4 divide-y divide-black/10">
                 {socialLinks.map((social) => (
@@ -94,8 +106,14 @@ function Contato() {
                       rel="noopener noreferrer"
                       className="group flex min-h-14 items-center justify-between gap-4 py-3 text-sm transition-colors hover:text-neutral-500 focus-visible:outline-2 focus-visible:outline-offset-4"
                     >
-                      <span>
-                        {social.name} <span className="ml-2 text-neutral-500">{social.label}</span>
+                      <span className="flex min-w-0 items-center gap-3">
+                        <SocialIcon name={social.name} />
+                        <span>
+                          {social.name}{" "}
+                          <span className="mt-1 block text-xs text-neutral-500">
+                            {social.label}
+                          </span>
+                        </span>
                       </span>
                       <span aria-hidden="true">↗</span>
                       <span className="sr-only">(abre em nova aba)</span>

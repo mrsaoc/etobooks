@@ -61,12 +61,35 @@ function PostPage() {
 
         <header className="mt-12 border-b border-black/10 pb-10">
           <p className="text-[0.62rem] tracking-[0.26em] text-neutral-400 uppercase">
-            {post.displayDate}
+            {post.category}
+            {post.displayDate ? ` · ${post.displayDate}` : ""}
           </p>
           <h1 className="mt-6 font-serif text-3xl leading-[1.15] tracking-tight text-balance sm:text-4xl md:text-5xl">
             {post.title}
           </h1>
+          <p className="mt-5 text-sm text-neutral-500">Por Ewerthon Tobace</p>
+          {post.subtitle && (
+            <p className="mt-6 font-serif text-xl leading-relaxed text-neutral-600 italic">
+              {post.subtitle}
+            </p>
+          )}
         </header>
+
+        {post.image && (
+          <figure className="mt-10">
+            <img
+              src={post.image.src}
+              alt={post.image.alt}
+              decoding="async"
+              className="mx-auto h-auto max-h-[36rem] w-auto max-w-full object-contain"
+            />
+            {post.image.credit && (
+              <figcaption className="mt-3 text-center text-xs text-neutral-500">
+                {post.image.credit}
+              </figcaption>
+            )}
+          </figure>
+        )}
 
         <div className="mt-12 space-y-8 font-sans text-base leading-relaxed text-neutral-600 md:text-[1.06rem] md:leading-[1.95]">
           {post.paragraphs.map((paragraph: string, i: number) => (
@@ -83,7 +106,29 @@ function PostPage() {
           ))}
         </div>
 
+        {post.sections?.map((section) => (
+          <section
+            key={section.title}
+            className="mt-12 space-y-6 text-base leading-relaxed text-neutral-600 md:leading-[1.95]"
+          >
+            <h2 className="font-serif text-2xl text-black">{section.title}</h2>
+            {section.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </section>
+        ))}
+
         <footer className="mt-16 border-t border-black/10 pt-10">
+          {post.credits && (
+            <div className="mb-6 space-y-2 text-sm leading-relaxed text-neutral-600">
+              {post.credits.map((credit) => (
+                <p key={credit}>{credit}</p>
+              ))}
+            </div>
+          )}
+          {post.rights && (
+            <p className="mb-8 text-xs leading-relaxed text-neutral-500">{post.rights}</p>
+          )}
           <p className="text-[0.62rem] tracking-[0.26em] text-neutral-400 uppercase">ETO BOOKS</p>
         </footer>
       </div>
