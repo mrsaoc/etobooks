@@ -77,6 +77,10 @@ export const posts: Post[] = [
     title: "Para sempre",
     category: "Miniconto",
     displayDate: "1 de dezembro de 2021",
+    image: {
+      src: "/images/textos/para-sempre.png",
+      alt: "Arte de Para sempre, com flores coloridas sobre fundo azul-escuro e créditos de Ewerthon Tobace",
+    },
     excerpt:
       "“Eu te amo”, ouvi-a dizer ao telefone. Sabia que não era uma declaração de amor. Ela estava se despedindo.",
     paragraphs: [

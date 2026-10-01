@@ -24,7 +24,8 @@ Imagens fornecidas pelo cliente para acompanhar os textos de Ewerthon Tobace, pr
 - `textos/drinks-beijos-e-cia.png`: original `amor, beijos & cia.png`, arte ©ETo2021.
 - `textos/um-rosto-no-computador.jpeg`: original `Um rosto no computador.jpg.jpeg`, Foto: Divulgação.
 - `textos/depois-daquela-viagem.jpeg`: original `DepoisDaquelaViagem.jpg.jpeg`.
+- `textos/para-sempre.png`: original `©Ewerthon Tobace, da série de minicontos de amor.png`, arte ©ETo/2021.
 
-O texto “Para sempre” foi fornecido sem imagem anexada. Os créditos e os avisos de direitos enviados pelo cliente constam nas páginas dos minicontos.
+Os créditos e os avisos de direitos enviados pelo cliente constam nas páginas dos minicontos.
 
 As faixas da Home usam recortes via CSS; as fotos podem ser substituídas pelas imagens definitivas do cliente.
