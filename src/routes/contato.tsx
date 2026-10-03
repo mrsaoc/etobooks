@@ -68,13 +68,13 @@ function Contato() {
           >
             Enviar mensagem <span aria-hidden="true">↗</span>
           </a>
-          <figure className="mt-10">
+          <figure className="mt-10 max-w-md">
             <img
-              src="/images/ewerthon-tobace.jpeg"
-              alt="Ewerthon Tobace, jornalista, escritor e ghostwriter"
+              src="/images/ewerthon-contato.jpeg"
+              alt="Retrato de Ewerthon Tobace ao lado de um microfone"
               loading="lazy"
               decoding="async"
-              className="aspect-[4/3] w-full object-cover object-[42%_center] grayscale"
+              className="h-auto w-full"
             />
             <figcaption className="mt-3 text-xs tracking-wide text-neutral-500">
               Ewerthon Tobace · ETO BOOKS
