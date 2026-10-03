@@ -15,7 +15,7 @@ export const Route = createFileRoute("/contato")({
       { property: "og:title", content: "Fale Comigo — ETO BOOKS" },
       {
         property: "og:description",
-        content: "Sua história pode começar aqui. Entre em contato: info@etobooks.com.",
+        content: "Sua história pode começar aqui. Entre em contato: tobace@etobooks.com.",
       },
     ],
   }),
@@ -63,7 +63,7 @@ function Contato() {
             </p>
           </div>
           <a
-            href="mailto:info@etobooks.com"
+            href="mailto:tobace@etobooks.com"
             className="mt-8 inline-flex min-h-12 items-center gap-8 border border-black bg-black px-7 py-3 text-sm text-white transition-colors hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black"
           >
             Enviar mensagem <span aria-hidden="true">↗</span>
@@ -86,10 +86,10 @@ function Contato() {
             <div>
               <p className="text-[0.65rem] tracking-[0.26em] text-neutral-500 uppercase">E-mail</p>
               <a
-                href="mailto:info@etobooks.com"
+                href="mailto:tobace@etobooks.com"
                 className="mt-4 inline-block break-all border-b border-black/30 pb-1 font-serif text-2xl transition-colors hover:border-black focus-visible:outline-2 focus-visible:outline-offset-4"
               >
-                info@etobooks.com
+                tobace@etobooks.com
               </a>
             </div>
             <ContactLocations />
